@@ -7,15 +7,18 @@ license = "MIT"
 repository = "https://github.com/mrvillage/ieu"
 
 [dependencies]
-aligned-vec = "0.6.4"
-diol = "0.13.1"
 lazy_static = "1.5.0"
 num_cpus = "1.16.0"
-rayon = "1.10.0"
-spindle = "0.2.3"
 
 [target.'cfg(loom)'.dependencies]
 loom = "0.7"
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(loom)'] }
+
+[[bench]]
+name = "basic"
+harness = false
+
+[dev-dependencies]
+diol = "0.13.1"
